@@ -1,5 +1,3 @@
-package cc.openhome;
-
 public class IntegerArray {
     public static void main(String[] args) {
         Integer[] scores = new Integer[3];

@@ -1,12 +1,10 @@
-package cc.openhome;
-
 import java.util.Arrays;
 
 public class Scores2 {
     public static void main(String[] args) {
-        var scores = new int[10];
+        int[] scores = new int[10];
         
-        for(var score : scores) {
+        for(int score : scores) {   //for(int i =0;i<scores,length;i++)
             System.out.printf("%2d", score);
         }
         System.out.println();
@@ -15,5 +13,12 @@ public class Scores2 {
         for(var score : scores) {
             System.out.printf("%3d", score);
         }
+        for(int score:scores){
+            scores[i]-=30;
+        }
+        for(int score:scores){
+            System.out.printf("%3d,score");
+        }
     }
+   
 }
