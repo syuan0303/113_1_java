@@ -1,43 +1,41 @@
-public class Time1Test {
-    public  static void main(String[]arge){import java.util.Scanner;
-
 public class Time1 {
-    private int hour; 
-    private int minute;
-    private int second; 
+    private int hour;  
+    private int minute;  
+    private int second;  
 
     public Time1(int hour, int minute, int second) {
-        if (hour < 0 || hour >= 24)
-            throw new IllegalArgumentException("Hour must be 0-23");
-        if (minute < 0 || minute >= 60)
-            throw new IllegalArgumentException("Minute must be 0-59");
-        if (second < 0 || second >= 60)
-            throw new IllegalArgumentException("Second must be 0-59");
-
-        this.hour = hour;
-        this.minute = minute;
-        this.second = second;
+        setHour(hour);
+        setMinute(minute);
+        setSecond(second);
     }
 
     public void setHour(int hour) {
-        if (hour < 0 || hour >= 24)
-            throw new IllegalArgumentException("Hour must be 0-23");
-        this.hour = hour;
+        if (hour < 0 || hour >= 24) {
+            System.out.println("Invalid hour, setting to 0.");
+            this.hour = 0;
+        } else {
+            this.hour = hour;
+        }
     }
 
     public void setMinute(int minute) {
-        if (minute < 0 || minute >= 60)
-            throw new IllegalArgumentException("Minute must be 0-59");
-        this.minute = minute;
+        if (minute < 0 || minute >= 60) {
+            System.out.println("Invalid minute, setting to 0.");
+            this.minute = 0;
+        } else {
+            this.minute = minute;
+        }
     }
 
     public void setSecond(int second) {
-        if (second < 0 || second >= 60)
-            throw new IllegalArgumentException("Second must be 0-59");
-        this.second = second;
+        if (second < 0 || second >= 60) {
+            System.out.println("Invalid second, setting to 0.");
+            this.second = 0;
+        } else {
+            this.second = second;
+        }
     }
 
- 
     public int getHour() {
         return hour;
     }
@@ -49,6 +47,7 @@ public class Time1 {
     public int getSecond() {
         return second;
     }
+
 
     public void tick() {
         second++;
@@ -93,7 +92,6 @@ public class Time1Test {
             time.tick();
         }
 
-
         System.out.println("\n時間經過後:");
         time.printUniversal();
         time.printStandard();
@@ -102,11 +100,12 @@ public class Time1Test {
     }
 }
 
+
         //Time1 time = new ...
         //呼叫printUniversal()
         //呼叫printStandard()
         //使用者輸入時間過了幾秒，用迴圈呼叫tick
         //呼叫printUniversal()
         //呼叫printStandard()
-    }
-}
+    
+
