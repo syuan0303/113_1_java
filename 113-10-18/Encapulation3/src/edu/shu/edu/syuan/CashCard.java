@@ -1,62 +1,105 @@
-package  edu.shu.edu.syuan;
+import java.util.Scanner;
 
-public class CashCard {
-    private String number;
-    private int balance;
-    private int bonus;
+public class Time1 {
+    private int hour;  
+    private int minute; 
+    private int second; 
 
-    public CashCard(String number, int balance, int bonus) {
-        this.number = number;
-        this.balance = balance;
-        this.bonus = bonus;
+
+    public Time1(int hour, int minute, int second) {
+        this.hour = adjustTime(hour, 0, 23, "hour");
+        this.minute = adjustTime(minute, 0, 59, "minute");
+        this.second = adjustTime(second, 0, 59, "second");
     }
 
-    public String getNumber(){
-        return  this.number;
+
+    private int adjustTime(int value, int min, int max, String timeType) {
+        if (value < min || value > max) {
+            System.out.printf("Invalid %s. Resetting to %d.%n", timeType, min);
+            return min;
+        }
+        return value;
     }
 
-    public int getBalance(){
-        return  this.balance;
-    }
-    public int getBonus(){
-        return  this.bonus;
+
+    public void setHour(int hour) {
+        this.hour = adjustTime(hour, 0, 23, "hour");
     }
 
-    public void setNumber(String number){
-        this.number = number;
+    public void setMinute(int minute) {
+        this.minute = adjustTime(minute, 0, 59, "minute");
     }
 
-    public void store(int money){
-        if(money>0){
-            this.balance +=money;
-            if(money>=1000){
-                this.bonus += money/1000;
+    public void setSecond(int second) {
+        this.second = adjustTime(second, 0, 59, "second");
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public int getSecond() {
+        return second;
+    }
+
+
+    public void tick() {
+        second++;
+        if (second >= 60) {
+            second = 0;
+            minute++;
+            if (minute >= 60) {
+                minute = 0;
+                hour++;
+                if (hour >= 24) {
+                    hour = 0;
+                }
             }
         }
-        else{
-            System.out.println("儲值金額為負，來亂的!");
-        }
     }
 
-    public void charge(int money){
-        if(money>0){
-            if(money<=this.balance){
-                this.balance -= money;
-            }
-            else{
-                System.out.println("餘額不足，來亂的!");
-        }
-        }
-        else{
-            System.out.println("扣除金額為負，來亂的!");
+
+    public void printUniversal() {
+        System.out.printf("%02d:%02d:%02d\n", hour, minute, second);
+    }
+
+
+    public void printStandard() {
+        System.out.printf("%d:%02d:%02d %s\n",
+            ((hour == 0 || hour == 12) ? 12 : hour % 12),
+            minute, second, (hour < 12 ? "AM" : "PM"));
     }
 }
 
-    public int exchange(int bonus){
-    if(bonus>0){
-        this.bonus -=bonus;
-    }
-    return this.bonus;
+public class Time1Test {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+
+        Time1 time = new Time1(14, 5, 32);
+
+
+        System.out.println("Initial time:");
+        time.printUniversal();
+        time.printStandard();
+
+
+        System.out.print("Enter the number of seconds to pass: ");
+        int seconds = input.nextInt();
+
+
+        for (int i = 0; i < seconds; i++) {
+            time.tick();
+        }
+
+        System.out.println("\nTime after ticking:");
+        time.printUniversal();
+        time.printStandard();
+
+        input.close();
     }
 }
-
