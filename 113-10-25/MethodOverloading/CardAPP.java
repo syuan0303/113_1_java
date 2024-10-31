@@ -3,9 +3,6 @@ import java.util.Scanner;
 import edu.shu.edu.syuan.*;
 
 public class CardAPP {
-    public CardAPP() {
-    }
-
     public static void main(String[] args) {
         CashCard[] cards = {
                 new CashCard("A001", 500, 0),
@@ -28,8 +25,27 @@ public class CardAPP {
         //            card.getNumber(), card.getBalance(), card.getBalance());
         }
         for(int i = 0;i<cards.lenght;i++){
-            if(i%2==0){
-                System.out.printf"為(%s,%d,%d")儲值:",card.getNumber(),card.getBalance(),cards[i].
+            System.out.printf("為(%s,%d,%d)儲值:"
+            card[i].getNumber(),card[i].getBalance(),card[i].getBouns());
+            if(i % 2==0){
+
+                card[i].store(input.nextInt());
+
             }
+            else{
+
+                card[i].store(input.next(),input.nextInt());
+
+            }
+            System.out.printf("明細(%s, %d, %d)%n";
+            card[i].getNumber(),card[i].getBalance(),card[i].getBouns());
     }
+
+    card[1].charge(number:"A002",money:500);
+    System.out.printf("明細(%s,%d,%d)%n";
+        cards[1].getNumber(),card[1].getBalance(),card[1].getBouns());
+    card[1].charge(number:"A002",money:100,bonus:1);
+    System.out.printf("明細(%s,%d,%d)%n";
+        cards[1].getNumber(),cards[1].getBalance(),cards[1].getBouns());
 }
+
