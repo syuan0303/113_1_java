@@ -101,6 +101,7 @@ public class Time1Test {
 }
 
 
+
         //Time1 time = new ...
         //呼叫printUniversal()
         //呼叫printStandard()
