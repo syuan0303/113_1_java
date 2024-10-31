@@ -3,7 +3,7 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/untitled/src" isTestSource="false" packagePrefix="cc.openhome" />
+      <sourceFolder url="file://$MODULE_DIR$/OverloadedConstructor" isTestSource="false" packagePrefix="edu.shu.edu.syuan" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
