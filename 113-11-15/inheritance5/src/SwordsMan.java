@@ -6,7 +6,7 @@ public class SwordsMan extends Role {
     }
 
     @Override
-    public String toSting(){
-        return String.format("劍士:%s",super.toString());
+    public String toString() {
+        return String.format("劍士：%s", super.toString());
     }
 }
