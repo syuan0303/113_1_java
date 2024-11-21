@@ -2,7 +2,7 @@ public abstract class Role {
     private String name;
     private int level;
     private int blood;
-    
+
     public int getBlood() {
         return blood;
     }
@@ -24,8 +24,8 @@ public abstract class Role {
     }
 
     public void setName(String name) {
-
         this.name = name;
     }
-    public abstract void fight();
+
+    public abstract void fight() ;
 }
