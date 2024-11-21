@@ -1,10 +1,8 @@
-package cc.openhome;
-
 public class Role {
     private String name;
     private int level;
     private int blood;
-    
+
     public int getBlood() {
         return blood;
     }
