@@ -11,15 +11,15 @@ public class Ocean {
 
     static void doSwim(Swimmer swimmer) {
         swimmer.swim();
-        if(swimmer instanceof Diver){
-            ((Diver)swimmer).dive();
+        if (swimmer instanceof Diver) {
+           ((Diver) swimmer).dive();
         }
-        if(swimmer instanceof  Flyer){
-            ((Flyer)swimmer).fly();
+        if (swimmer instanceof Flyer) {
+            ((Flyer) swimmer).fly();
         }
-
     }
-    static  void doFly(Flyer flyer){
+
+    static void doFly(Flyer flyer) {
         flyer.fly();
     }
 }

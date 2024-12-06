@@ -7,6 +7,6 @@ public class Boat implements Swimmer {
     
     @Override
     public void swim() {
-        System.out.printf("船在水面 %s 航行%n", name);
+        System.out.printf(" %s 航行%n", name);
     }
 } 

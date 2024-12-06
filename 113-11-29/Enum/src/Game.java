@@ -13,8 +13,8 @@ public class Game {
         	        case RIGHT -> "播放向右動畫";
         	        case LEFT  -> "播放向左動畫";
         	        case UP    -> "播放向上動畫";
-					case DOWN 	->"播放向下動作";
-					default -> "不支援此動作";
+					case DOWN  -> "播放向下動畫";
+			        default    -> "不支援此動作";
         	    }
         	);
     }   
